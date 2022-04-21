@@ -1,0 +1,15 @@
+{% extends 'book/base.html' %}
+
+{% block content %}
+<div class="container-fluid d-flex justify-content-center my-5 h-100">
+    <form action="" method="POST" class="w-50">
+        <table class="table table-striped my-5 table-hover">
+        {% csrf_token %}
+        {{form.as_table}}
+
+        </table>
+        <input class="mx-5 btn btn-success mb-2" type="submit"/>
+    </form>
+</div>
+
+{% endblock %}

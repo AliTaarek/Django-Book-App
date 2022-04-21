@@ -1,0 +1,24 @@
+{% extends 'book/base.html' %}
+
+{% block content %}
+
+<div class="card mb-3 mx-auto mt-3 p-3 bg-dark" style="height:90vh;width:75vh">
+  {% load static %}
+    {% with 'book/images/'|add:image as image_static %}
+        <img class="h-50" src="{% static image_static %}"/>
+    {% endwith %}
+  <div class="card-body text-white">
+    <h4 class="card-title text-center">Book Info :</h4>
+    <div class="card-text ">
+        <p>Id : {{book.id}}</p>
+        <p>Name : {{book.name}}</p>
+        <p>Price : {{book.price}}</p>
+        <p>Appropriate : {{book.appropriate}}</p>
+        <p>Added at : {{book.added_at}}</p>
+        <p>Published at : {{book.publish_date}}</p>
+        <p><a class="text-decoration-none" href="/books/author/{{author.id}}">Author : {{author}}</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
